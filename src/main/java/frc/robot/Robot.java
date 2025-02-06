@@ -30,7 +30,7 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
-    neoMotor = new SparkMax(3, MotorType.kBrushless); // Device ID 1
+    neoMotor = new SparkMax(1, MotorType.kBrushless); // Device ID 1
   }
 
   /**
@@ -47,7 +47,7 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
-    neoMotor.set(0.5); // Set motor to 50% power
+    neoMotor.set(0.1); // Set motor to 50% power
   }
 
   /** This function is called once each time the robot enters Disabled mode. */
