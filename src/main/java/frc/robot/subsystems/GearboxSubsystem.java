@@ -5,7 +5,6 @@ import com.revrobotics.spark.SparkMax;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
 import frc.robot.constants.GearboxConstants;
 
 
@@ -43,13 +42,13 @@ public class GearboxSubsystem extends SubsystemBase {
         this.sparkMax_2.set(0);
         break;
       case 1:
-        this.sparkMax_1.set(0.1);
-        this.sparkMax_2.set(0.1);
+        this.sparkMax_1.set(-1 * GearboxConstants.forwardSpeed); // Times negative one as motors turn in opposite directions at this angle
+        this.sparkMax_2.set(GearboxConstants.forwardSpeed);
         SmartDashboard.putString("[GEARBOX] State", "Forward");
         break;
       case 2:
-        this.sparkMax_1.set(-0.1);
-        this.sparkMax_2.set(-0.1);
+        this.sparkMax_1.set(-1 * GearboxConstants.backwardSpeed); // Times negative one as motors turn in opposite directions at this angle
+        this.sparkMax_2.set(GearboxConstants.backwardSpeed);
         SmartDashboard.putString("[GEARBOX] State", "Backward");
         break;
     }
